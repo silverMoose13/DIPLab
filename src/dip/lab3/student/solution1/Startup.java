@@ -4,24 +4,38 @@ import java.util.Scanner;
 
 /**
  *
- * @author Aaron
+ * @author Aaron Gnas
  */
 //the purpose of this class is to test the capabilities of the 
 //messenger application created. It acheives this by talking to the
 //high level class MessengingSystem. This is to 
 //make proper use of the principle of least knowledge
+
+//this class has a plug and play aspect to it. I could add more specialized reader/writer
+//classes and it won't break the program. No changes are necessary. This program in essence
+//is portable.
 public class Startup {
 
     public static void main(String[] args) {
 
         //these come from the interfaces and can't have object instantition
         //remember this.
-        //this Liskov Substitution Princile syntax still seems fuzzy to me
+        //this Liskov Substitution Princile syntax still seems fuzzy to me on why it works
+        
+        //instantiation of the gui reader and writer objects
+        MessageReader newGuiMessageReader = new GuiMessageReader();
+        MessageWriter newGuiMessageWriter = new GuiMessageWriter();
+        
+        MessagingSystem newGuiMessage = new MessagingSystem(newGuiMessageReader, newGuiMessageWriter);
+        
+        //instantiation of the keyboard reader and console writer objects
         MessageReader newKeyboardMessageReader = new KeyboardMessageReader();
         MessageWriter newConsoleMessageWriter = new ConsoleMessageWriter();
 
         MessagingSystem newKeyboardToConsoleMessage = new MessagingSystem(newKeyboardMessageReader, newConsoleMessageWriter);
-
+        
+        
+        newGuiMessage.generateMessage();
         newKeyboardToConsoleMessage.generateMessage();
 
         //these lines below are not critical to the program. I just wanted the program

@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dip.lab3.student.solution1;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Aaron
  */
-public class GuiMessageReader {
+public class GuiMessageReader implements MessageReader{
+
+    //check out the textbook for some cool validation and error boxes that prompt
+    //to try again and are you sure boxes
+    @Override
+    public String readMessage() {
+        String message = JOptionPane.showInputDialog(null, "Please enter in a message: ");
+        return message;
+    }
+    
     
 }
