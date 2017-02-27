@@ -14,6 +14,12 @@ import java.util.Scanner;
 //this class has a plug and play aspect to it. I could add more specialized reader/writer
 //classes and it won't break the program. No changes are necessary. This program in essence
 //is portable.
+
+//I currently have two different ways to input and output as the specs require. However
+//I would like to figure out a way to add a third capability just for fun. That capability
+//would be for file reading and writing. This one is a bit tricky because writing happens
+//before reading so I will probably need to create a new method in the messenging system class
+//to support this.
 public class Startup {
 
     public static void main(String[] args) throws Exception {
@@ -35,14 +41,14 @@ public class Startup {
         MessagingSystem newKeyboardToConsoleMessage = new MessagingSystem(newKeyboardMessageReader, newConsoleMessageWriter);
         
         //instantiation of the file writer and reader objects
-        MessageReader newFileMessageReader = new FileMessageReader();
-        MessageWriter newFileMessageWriter = new FileMessageWriter();
-        
-        MessagingSystem newFileMessage = new MessagingSystem(newFileMessageReader, newFileMessageWriter);
-        
+//        MessageWriter newFileMessageWriter = new FileMessageWriter();
+//        MessageReader newFileMessageReader = new FileMessageReader();
+//        
+//        MessagingSystem newFileMessage = new MessagingSystem(newFileMessageReader, newFileMessageWriter);
+
         newGuiMessage.generateMessage();
         newKeyboardToConsoleMessage.generateMessage();
-        newFileMessage.generateMessage();
+//        newFileMessage.generateMessage();
 
         //these lines below are not critical to the program. I just wanted the program
         //to close out in a more formalized way rather than just closing after outputting

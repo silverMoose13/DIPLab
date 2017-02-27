@@ -30,6 +30,9 @@ public class MessagingSystem {
         this.newWriter = newWriter;
     }
     
+    // I will probably need a new method here since in the case of the file. Writing happens
+    //first and then reading so the method below can't be used for that
+    
     public final void generateMessage() throws Exception {
         //this String variable named message is local to this method. It is imperative this
         //occurs this way because we don't want this class to start
