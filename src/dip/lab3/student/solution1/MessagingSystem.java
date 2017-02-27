@@ -30,7 +30,7 @@ public class MessagingSystem {
         this.newWriter = newWriter;
     }
     
-    public final void generateMessage() {
+    public final void generateMessage() throws Exception {
         //this String variable named message is local to this method. It is imperative this
         //occurs this way because we don't want this class to start
         //independently making its own messages. This is the job

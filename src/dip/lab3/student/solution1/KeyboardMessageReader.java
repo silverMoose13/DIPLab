@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class KeyboardMessageReader implements MessageReader {
 
     private Scanner keyboardUserInput;
-    ConsoleMessageWriter newMessage;
+    private ConsoleMessageWriter newMessage;
 
     public KeyboardMessageReader() {
         keyboardUserInput = new Scanner(System.in);

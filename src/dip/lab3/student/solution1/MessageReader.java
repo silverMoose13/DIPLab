@@ -13,6 +13,6 @@ public interface MessageReader {
     
     //so far this is the only common method that the lower classes will
     //share. Check on this as the program become more developed.
-    public abstract String readMessage();
+    public abstract String readMessage() throws Exception;
     
 }

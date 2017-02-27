@@ -16,7 +16,7 @@ import java.util.Scanner;
 //is portable.
 public class Startup {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //these come from the interfaces and can't have object instantition
         //remember this.
@@ -34,9 +34,15 @@ public class Startup {
 
         MessagingSystem newKeyboardToConsoleMessage = new MessagingSystem(newKeyboardMessageReader, newConsoleMessageWriter);
         
+        //instantiation of the file writer and reader objects
+        MessageReader newFileMessageReader = new FileMessageReader();
+        MessageWriter newFileMessageWriter = new FileMessageWriter();
+        
+        MessagingSystem newFileMessage = new MessagingSystem(newFileMessageReader, newFileMessageWriter);
         
         newGuiMessage.generateMessage();
         newKeyboardToConsoleMessage.generateMessage();
+        newFileMessage.generateMessage();
 
         //these lines below are not critical to the program. I just wanted the program
         //to close out in a more formalized way rather than just closing after outputting

@@ -17,5 +17,5 @@ public interface MessageWriter {
     //this method needs a message parameter so that the subclass can
     //properly utilize this method and not create its own properties which
     //could lead to future maintenance
-    public abstract void writeMessage(String message);
+    public abstract void writeMessage(String message) throws Exception;
 }
