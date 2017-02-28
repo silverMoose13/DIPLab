@@ -47,6 +47,9 @@ public class MessagingSystem {
         //of the MessageWriter and MessageReader classes to go delegate that
         //work further downstream.
         String message = newReader.readMessage();
-        newWriter.writeMessage("The message passed in reads: " + message + "\n");
+        
+        //I would've like to add some dialog here along with the message displaying
+        //but it when I did, the GUI riddle response matching logic did not work properly
+        newWriter.writeMessage(message);
     }
 }

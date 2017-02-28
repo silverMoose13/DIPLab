@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 //user to enter a message
 public class GuiMessageReader implements MessageReader{
 
-    //check out the textbook for some cool validation and error boxes that prompt
-    //to try again and are you sure boxes
+    //below I have a riddle for the input dialog that pops up
     @Override
     public final String readMessage() {
-        String message = JOptionPane.showInputDialog(null, "Please enter in a message: ");
+        String message = JOptionPane.showInputDialog(null, "Solve the riddle:\n"
+                + "What kind of " + "flower exists on your face?");
         return message;
     }
     

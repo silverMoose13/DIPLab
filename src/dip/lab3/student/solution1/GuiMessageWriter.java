@@ -11,9 +11,22 @@ import javax.swing.JOptionPane;
 
 public class GuiMessageWriter implements MessageWriter{
 
+    
     @Override
     public final void writeMessage(String message) {
+        
+        //this line is really just to show that the message displays properly on its own
         JOptionPane.showMessageDialog(null, message);
+        
+        //just adding a little fun into the mix here
+        JOptionPane.showMessageDialog(null, message + " eh? Let's see if you are right...");
+        
+        if (message.equalsIgnoreCase("Tulips")) {
+            JOptionPane.showMessageDialog(null, "Correct! Nice job!");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Incorrect...try again some other time!");
+        }
     }
     
 }
