@@ -8,7 +8,8 @@ import java.util.Scanner;
  * @author Aaron
  */
 
-//this class demonstrates the ability of writing messages to a file.
+//this responsibility of this class get the file name and write one or
+//multiple messages to that file.
 public class FileMessageWriter implements MessageWriter{
 
     private String fileName;
@@ -43,7 +44,8 @@ public class FileMessageWriter implements MessageWriter{
         this.userInput = userInput;
     }
     
-    //this method will take the user's input and write it to the file
+    //this method will prompt the user enter a message. It will then take
+    //the user's input and write it to the file
     @Override
     public final void writeMessage(String message) throws Exception {
         PrintWriter outputFile = new PrintWriter(getFileName());

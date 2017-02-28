@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dip.lab3.student.solution1;
 
 import java.util.Scanner;
@@ -14,6 +9,7 @@ import java.util.Scanner;
 
 //the responsibilty of this class is to provide the capability
 //to intake input from the user using the keyboard
+
 public class KeyboardMessageReader implements MessageReader {
 
     private Scanner keyboardUserInput;
@@ -29,6 +25,13 @@ public class KeyboardMessageReader implements MessageReader {
     @Override
     public String readMessage() {
         //output to console is not the job here in this class
+        //so an object of the console message writer class was instantiated
+        
+        /////would it be better to make a seperate printservices class
+        /////so that the responsibility doesn't get confused? The only
+        //supporting argument I have for not creating a seperate printservices class
+        //is that the to print methods between the two classes would be the exact same and
+        //take up needless memory
         newMessage.writeMessage("Please enter in a message: ");
         return keyboardUserInput.nextLine();
     }

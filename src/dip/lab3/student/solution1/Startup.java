@@ -12,21 +12,25 @@ import java.util.Scanner;
 //make proper use of the principle of least knowledge
 
 //this class has a plug and play aspect to it. I could add more specialized reader/writer
-//classes and it won't break the program. No changes are necessary. This program in essence
-//is portable.
+//classes through initialization and it won't break the program. No changes are necessary 
+//either. Thus this program is portable
 
-//I currently have two different ways to input and output as the specs require. However
-//I would like to figure out a way to add a third capability just for fun. That capability
-//would be for file reading and writing. This one is a bit tricky because writing happens
+//I currently have two different ways to input and output as the specs require. In addition
+//I have a third mode of input and output. That mode is
+//for file reading and writing. As it stands this program currently does not function
+//It instead throws null pointer exceptions. I believe I have narrowed the problem down
+//to the fact that my generateMessage() method reads first and there is no value for a file.
+//Unlike the other two forms of input and output I created, this one is a bit tricky because writing happens
 //before reading so I will probably need to create a new method in the messenging system class
 //to support this.
+
 public class Startup {
 
     public static void main(String[] args) throws Exception {
 
-        //these come from the interfaces and can't have object instantition
-        //remember this.
-        //this Liskov Substitution Princile syntax still seems fuzzy to me on why it works
+        //Interfaces cannot be instantiated so we need to use the LSP.
+        //this Liskov Substitution Princile syntax still seems fuzzy to me on why
+        //it is able to work however.
         
         //instantiation of the gui reader and writer objects
         MessageReader newGuiMessageReader = new GuiMessageReader();
