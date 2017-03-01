@@ -19,10 +19,6 @@ package dip.lab3.student.solution1;
 //not every class has to implement this. Only ones that need to can.
 public interface RandomNumberGeneratorService {
     
-    /**
-     *
-     * @return
-     */
     public int generateRandomNumber();
     
 }

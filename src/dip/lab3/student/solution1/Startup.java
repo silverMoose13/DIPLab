@@ -25,19 +25,16 @@ public class Startup {
 
     public static void main(String[] args) throws Exception {
 
-        //Interfaces cannot be instantiated so we need to use the LSP.
-        //this Liskov Substitution Princile syntax still seems fuzzy to me on why
-        //it is able to work however.
         //instantiation of the gui reader and writer objects
-        MessageInput newGuiMessageReader = new GuiMessageReader();
-        MessageOutput newGuiMessageWriter = new GuiMessageWriter();
+        MessageInput newGuiMessageReader = new GuiMessageInput();
+        MessageOutput newGuiMessageWriter = new GuiMessageOutput();
 
         MessagingService serviceOne = new MessagingService(newGuiMessageReader, newGuiMessageWriter);
         serviceOne.generateMessage();
 
         //instantiation of the keyboard reader and console writer objects
-        MessageInput newKeyboardMessageReader = new KeyboardMessageReader();
-        MessageOutput newConsoleMessageWriter = new ConsoleMessageWriter();
+        MessageInput newKeyboardMessageReader = new KeyboardMessageInput();
+        MessageOutput newConsoleMessageWriter = new ConsoleMessageOutput();
 
         MessagingService serviceTwo = new MessagingService(newKeyboardMessageReader, newConsoleMessageWriter);
         serviceTwo.generateMessage();
@@ -55,19 +52,18 @@ public class Startup {
         //these lines below are not critical to the program. I just wanted the program
         //to close out in a more formalized way rather than just closing after outputting
         //the message
-        ConsoleMessageWriter newMessage = new ConsoleMessageWriter();
+        ConsoleMessageOutput newMessage = new ConsoleMessageOutput();
         Scanner keyboard = new Scanner(System.in);
 
-        //think of a creative way to signal the success of the program and close it out
-        newMessage.writeMessage("\nDid the message(es) you entered display properly? (Yes or No) ");
+        newMessage.outputMessage("\nDid the message(es) you entered display properly? (Yes or No): ");
         String userConfirmationInput = keyboard.nextLine();
 
         if (userConfirmationInput.equalsIgnoreCase("Yes")) {
-            newMessage.writeMessage("\nThe program worked successfully and will now close.\n");
+            newMessage.outputMessage("\nThe program worked successfully and will now close.\n");
         } else if (userConfirmationInput.equalsIgnoreCase("No")) {
-            newMessage.writeMessage("\nThis program has some issues that need to be fixed.\n");
-            newMessage.writeMessage("Notifying administrator...\n");
-            newMessage.writeMessage("Complete. Thank you for your feedback!\n");
+            newMessage.outputMessage("\nThis program has some issues that need to be fixed.\n");
+            newMessage.outputMessage("Notifying administrator...\n");
+            newMessage.outputMessage("Complete. Thank you for your feedback!\n");
         } else {
             throw new IllegalArgumentException("Error: Improper format for response.");
         }
