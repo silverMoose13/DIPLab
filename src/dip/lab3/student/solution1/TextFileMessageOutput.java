@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @author Aaron
  */
 //this class was just for practice
-
 //this responsibility of this class get the text file name and write one or
 //multiple messages to that file.
 public class TextFileMessageOutput implements MessageOutput {
@@ -37,8 +36,9 @@ public class TextFileMessageOutput implements MessageOutput {
             throw new IllegalArgumentException("Error: filename must not be empty or null.");
         } else if (!(fileName.endsWith(".txt"))) {
             throw new IllegalArgumentException("Error: filename must not be empty or null.");
+        } else {
+            this.fileName = fileName;
         }
-        this.fileName = fileName;
     }
 
     public final String getUserInput() {
@@ -48,8 +48,9 @@ public class TextFileMessageOutput implements MessageOutput {
     public final void setUserInput(String userInput) {
         if (userInput == null || userInput.isEmpty()) {
             throw new IllegalArgumentException("Error: filename must not be empty or null.");
+        } else {
+            this.userInput = userInput;
         }
-        this.userInput = userInput;
     }
 
     //this method will prompt the user enter a message. It will then take
@@ -66,7 +67,7 @@ public class TextFileMessageOutput implements MessageOutput {
 
             newMessage.outputMessage("Would you like to write another message to "
                     + "the file named " + getFileName() + "? (Yes or No) ");
-            
+
             userInput = keyboard.nextLine();
 
             if (userInput.equalsIgnoreCase("Yes") || userInput.equalsIgnoreCase("No")) {

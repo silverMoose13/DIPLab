@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @author Aaron
  */
 //this class was just for practice
-
 //the main responsibility of this class is to read the contents stored in a specific text file
 public class TextFileMessageInput implements MessageInput {
 
@@ -32,8 +31,9 @@ public class TextFileMessageInput implements MessageInput {
             throw new IllegalArgumentException("Error: filename must not be empty or null.");
         } else if (!(fileName.endsWith(".txt"))) {
             throw new IllegalArgumentException("Error: filename must not be empty or null.");
+        } else {
+            this.fileName = fileName;
         }
-        this.fileName = fileName;
     }
 
     //this method will acquire the filename, open it up, and read from it
