@@ -12,7 +12,7 @@ import java.util.Scanner;
 //It accomplishes this with the help of implementing two interfaces. The RNG interface
 //creates a random number that will match up with the bank of statements. The other interface
 //sends over the messageReader() method so that the message can be input/read.
-public class KeyboardMessageReader implements MessageReader, RandomNumberGeneratorService {
+public class KeyboardMessageReader implements MessageInput, RandomNumberGeneratorService {
 
     private Scanner keyboardUserInput;
     private ConsoleMessageWriter newMessage;

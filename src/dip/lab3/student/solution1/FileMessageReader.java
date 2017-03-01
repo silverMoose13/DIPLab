@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Aaron
  */
 //the main responsibility of this class is to read the contents stored in a specific file
-public class FileMessageReader implements MessageReader {
+public class FileMessageReader implements MessageInput {
 
     private String fileName;
     private ConsoleMessageWriter newMessage;

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 //the responsbility of this class it to take a gui message and output it
 //using a show message dialog box
 
-public class GuiMessageWriter implements MessageWriter{
+public class GuiMessageWriter implements MessageOutput{
 
     
     @Override

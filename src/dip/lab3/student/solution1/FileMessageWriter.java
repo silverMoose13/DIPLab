@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 //this responsibility of this class get the file name and write one or
 //multiple messages to that file.
-public class FileMessageWriter implements MessageWriter{
+public class FileMessageWriter implements MessageOutput{
 
     private String fileName;
     private String userInput;

@@ -7,29 +7,30 @@ package dip.lab3.student.solution1;
 
 //this class serves as the high level class in the program. It delegates the work
 //off to the MessageReader and MessageWriter classes. 
-public class MessagingSystem {
+public class MessagingService {
 
-    private MessageReader newReader;
-    private MessageWriter newWriter;
+    //reader and writer consider changing name
+    private MessageInput newReader;
+    private MessageOutput newWriter;
     
-    public MessagingSystem (MessageReader newReader, MessageWriter newWriter) {
+    public MessagingService (MessageInput newReader, MessageOutput newWriter) {
         this.newReader = newReader;
         this.newWriter = newWriter;
     }
 
-    public final MessageReader getNewReader() {
+    public final MessageInput getNewReader() {
         return newReader;
     }
 
-    public final void setNewReader(MessageReader newReader) {
+    public final void setNewReader(MessageInput newReader) {
         this.newReader = newReader;
     }
 
-    public final MessageWriter getNewWriter() {
+    public final MessageOutput getNewWriter() {
         return newWriter;
     }
 
-    public final void setNewWriter(MessageWriter newWriter) {
+    public final void setNewWriter(MessageOutput newWriter) {
         this.newWriter = newWriter;
     }
     
